@@ -37,7 +37,7 @@ public class SHGetString
                 delimiter = Environment.NewLine;
             }
 
-            List<string> enumerable = value; //CASH.ToListStringIEnumerable2((IList)value);
+            List<string> enumerable = value; //CA.ToListStringIEnumerable2((IList)value);
             // I dont know why is needed SHReplace.Replace delimiterS(,) for space
             // This setting remove , before RoutedEventArgs etc.
             //CA.SHReplace.Replace(enumerable, delimiterS, AllStrings.space);
