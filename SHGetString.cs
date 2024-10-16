@@ -18,7 +18,7 @@ public class SHGetString
 
     public static string ListToString(List<string> value, string delimiter = null)
     {
-        if (value == null) return Consts.nulled;
+        if (value == null) return "(null)";
 
         string text;
         var valueType = value.GetType();
@@ -31,7 +31,7 @@ public class SHGetString
             var enumerable = value; //CA.ToListStringIEnumerable2((IList)value);
             // I dont know why is needed SHReplace.Replace delimiterS(,) for space
             // This setting remove , before RoutedEventArgs etc.
-            //CA.SHReplace.Replace(enumerable, delimiterS, AllStrings.space);
+            //CA.SHReplace.Replace(enumerable, delimiterS, "");
             text = string.Join(delimiter, enumerable);
         }
         //else if (valueType == Types.tDateTime)
