@@ -9,5 +9,3 @@ global using System.Diagnostics;
 global using System.Reflection;
 global using System.Net;
 global using SunamoStringGetString._sunamo;
-global using SunamoStringGetString;
-global using SunamoStringGetString._sunamo.SunamoStringGetLines;
