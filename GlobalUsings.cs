@@ -10,3 +10,4 @@ global using System.Reflection;
 global using System.Net;
 global using SunamoStringGetString._sunamo;
 global using System.Diagnostics.CodeAnalysis;
+global using SunamoStringGetString;
