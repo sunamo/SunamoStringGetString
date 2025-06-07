@@ -2,7 +2,7 @@ namespace SunamoStringGetString;
 
 public class SHGetString
 {
-    public static string GetString(List<string> o, string p)
+    public static string GetString(List<string> o/*, string p*/)
     {
         //StringBuilder sb = new StringBuilder();
         //foreach (var item in o)
