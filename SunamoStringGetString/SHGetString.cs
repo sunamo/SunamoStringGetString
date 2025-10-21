@@ -1,19 +1,22 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoStringGetString;
 
 public class SHGetString
 {
     public static string GetString(List<string> o/*, string p*/)
     {
-        //StringBuilder sb = new StringBuilder();
+        //StringBuilder stringBuilder = new StringBuilder();
         //foreach (var item in o)
         //{
-        //    sb.Append(ListToString(item, p) + p);
+        //    stringBuilder.Append(ListToString(item, p) + p);
         //}
-        //return sb.ToString();
+        //return stringBuilder.ToString();
 
-        var sb = new StringBuilder();
-        foreach (var item in o) sb.Append(item);
-        return sb.ToString();
+        var stringBuilder = new StringBuilder();
+        foreach (var item in o) stringBuilder.Append(item);
+        return stringBuilder.ToString();
     }
 
     public static string ListToString(List<string> value, string delimiter = null)
