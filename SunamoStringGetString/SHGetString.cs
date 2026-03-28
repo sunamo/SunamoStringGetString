@@ -1,47 +1,45 @@
 namespace SunamoStringGetString;
 
+/// <summary>
+/// Provides helper methods for converting string collections into a single string.
+/// </summary>
 public class SHGetString
 {
-    public static string GetString(List<string> o/*, string p*/)
+    /// <summary>
+    /// Concatenates all strings in the list into a single string without any delimiter.
+    /// </summary>
+    /// <param name="list">The list of strings to concatenate.</param>
+    /// <returns>A single concatenated string.</returns>
+    public static string GetString(List<string> list)
     {
-        //StringBuilder stringBuilder = new StringBuilder();
-        //foreach (var item in o)
-        //{
-        //    stringBuilder.Append(ListToString(item, p) + p);
-        //}
-        //return stringBuilder.ToString();
-
         var stringBuilder = new StringBuilder();
-        foreach (var item in o) stringBuilder.Append(item);
+        foreach (var item in list) stringBuilder.Append(item);
         return stringBuilder.ToString();
     }
 
-    public static string ListToString(List<string> value, string delimiter = null)
+    /// <summary>
+    /// Converts a list of strings into a single string representation, joining elements with the specified delimiter.
+    /// </summary>
+    /// <param name="list">The list of strings to convert. Returns "(null)" if null.</param>
+    /// <param name="delimiter">The delimiter to use between elements. Defaults to <see cref="Environment.NewLine"/> if null.</param>
+    /// <returns>A string representation of the list.</returns>
+    public static string ListToString(List<string>? list, string? delimiter = null)
     {
-        if (value == null) return "(null)";
+        if (list == null) return "(null)";
 
         string text;
-        var valueType = value.GetType();
+        var listType = list.GetType();
 
-        if (value is IList && valueType != Types.tString && valueType != Types.tStringBuilder &&
-            !(value is IList<char>))
+        if (list is IList && listType != Types.StringType && listType != Types.StringBuilderType &&
+            !(list is IList<char>))
         {
-            if (delimiter == null) delimiter = Environment.NewLine;
+            delimiter ??= Environment.NewLine;
 
-            var enumerable = value; //CA.ToListStringIEnumerable2((IList)value);
-            // I dont know why is needed SHReplace.Replace delimiterS(,) for space
-            // This setting remove , before RoutedEventArgs etc.
-            //CA.SHReplace.Replace(enumerable, delimiterS, "");
-            text = string.Join(delimiter, enumerable);
+            text = string.Join(delimiter, list);
         }
-        //else if (valueType == Types.tDateTime)
-        //{
-        //    //DTHelperEn.ToString(
-        //    text = ((DateTime)value).ToLongTimeString();
-        //}
         else
         {
-            text = value.ToString();
+            text = list.ToString() ?? string.Empty;
         }
 
         return text;
