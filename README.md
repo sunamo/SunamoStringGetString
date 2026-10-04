@@ -1,5 +1,10 @@
 # SunamoStringGetString
 
+## Short description
+
+Knihovna pro převod řádků a seznamů na jediný řetězec (třída SHGetString, metody GetString a ListToString). Součást sbírky pinp s testy a Runnerem.
+
+
 Converting rows to a single string
 
 ## Overview
