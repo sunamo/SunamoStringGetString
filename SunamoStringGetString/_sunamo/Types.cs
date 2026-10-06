@@ -1,8 +1,5 @@
 namespace SunamoStringGetString._sunamo;
 
-/// <summary>
-/// Provides cached <see cref="Type"/> references for commonly used .NET types.
-/// </summary>
 internal class Types
 {
     internal static readonly Type ObjectType = typeof(object);
