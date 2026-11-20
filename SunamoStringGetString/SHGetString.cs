@@ -1,7 +1,15 @@
 namespace SunamoStringGetString;
 
+/// <summary>
+/// Represents the SH get string type.
+/// </summary>
 public class SHGetString
 {
+    /// <summary>
+    /// Get string.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <returns>The get string result.</returns>
     public static string GetString(List<string> list)
     {
         var stringBuilder = new StringBuilder();
@@ -9,6 +17,12 @@ public class SHGetString
         return stringBuilder.ToString();
     }
 
+    /// <summary>
+    /// List to string.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <param name="delimiter">The delimiter.</param>
+    /// <returns>The list to string result.</returns>
     public static string ListToString(List<string>? list, string? delimiter = null)
     {
         if (list == null) return "(null)";
